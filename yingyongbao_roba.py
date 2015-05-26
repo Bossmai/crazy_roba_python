@@ -15,18 +15,18 @@ MAX_Y=400
 WAITTIME = 10
 
 print "Wait For connection..."
-device = MonkeyRunner.waitForConnection()
-#device = MonkeyRunner.waitForConnection(300, sys.argv[1])
+#device = MonkeyRunner.waitForConnection()
+device = MonkeyRunner.waitForConnection(300, sys.argv[1])
 
 print "Connected."
 device.startActivity(component=runComponent)
 
-MonkeyRunner.sleep(WAITTIME * 5)
+MonkeyRunner.sleep(WAITTIME * 3)
 
 
-device.touch(276, 48, 'DOWN_AND_UP')
+#device.touch(276, 48, 'DOWN_AND_UP')
 
-MonkeyRunner.sleep(WAITTIME)
+#MonkeyRunner.sleep(WAITTIME)
 
 device.touch(160, 93, 'DOWN_AND_UP')
 
