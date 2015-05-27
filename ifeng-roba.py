@@ -15,15 +15,21 @@ MAX_Y=400
 WAITTIME = 10
 
 print "Wait For connection..."
-device = MonkeyRunner.waitForConnection()
-#device = MonkeyRunner.waitForConnection(300, sys.argv[1])
+#device = MonkeyRunner.waitForConnection()
+device = MonkeyRunner.waitForConnection(300, sys.argv[1])
 
 print "Connected."
 device.startActivity(component=runComponent)
 
 MonkeyRunner.sleep(WAITTIME * 3)
 
+device.touch(226, 296, 'DOWN_AND_UP')
+
+MonkeyRunner.sleep(WAITTIME)
+
 device.drag((160, 300),(160, 150))
+
+MonkeyRunner.sleep(WAITTIME)
 
 start_time = time.time()
 print "Current time:" + str(start_time)
