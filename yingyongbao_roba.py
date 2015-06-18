@@ -13,46 +13,73 @@ MIN_Y=80
 MAX_Y=400
 
 WAITTIME = 10
+DEBUG = False
 
 print "Wait For connection..."
-#device = MonkeyRunner.waitForConnection()
-device = MonkeyRunner.waitForConnection(300, sys.argv[1])
+if DEBUG == True:
+    device = MonkeyRunner.waitForConnection()
+    WAITTIME = 5
+else:
+    WAITTIME = 12
+    device = MonkeyRunner.waitForConnection(300, sys.argv[1])
 
 print "Connected."
 device.startActivity(component=runComponent)
 
-MonkeyRunner.sleep(WAITTIME * 3)
+MonkeyRunner.sleep(WAITTIME * 2)
 
+device.touch(276, 48, 'DOWN_AND_UP')
 
-#device.touch(276, 48, 'DOWN_AND_UP')
-
-#MonkeyRunner.sleep(WAITTIME)
-
-device.touch(160, 93, 'DOWN_AND_UP')
+print "276,48"
 
 MonkeyRunner.sleep(WAITTIME)
 
-device.touch(155, 280, 'DOWN_AND_UP')
+device.touch(82, 458, 'DOWN_AND_UP')
+
+print "82,458"
 
 MonkeyRunner.sleep(WAITTIME)
 
-device.touch(273, 108, 'DOWN_AND_UP')
+device.touch(82, 458, 'DOWN_AND_UP')
+
+print "82,458"
 
 MonkeyRunner.sleep(WAITTIME)
 
+device.touch(87, 375, 'DOWN_AND_UP')
 
+MonkeyRunner.sleep(WAITTIME)
+
+print "87, 375"
+
+device.touch(82, 458, 'DOWN_AND_UP')
+
+MonkeyRunner.sleep(WAITTIME)
+
+print "82,458"
+
+device.touch(158, 92, 'DOWN_AND_UP')
+
+MonkeyRunner.sleep(WAITTIME)
+
+print "82,458"
+
+device.touch(276, 358, 'DOWN_AND_UP')
+
+print "276,358"
+MonkeyRunner.sleep(WAITTIME  * 2)
 
 
 start_time = time.time()
 print "Current time:" + str(start_time)
 
-end_time = start_time + 600
+end_time = start_time + 400
 
 
 while time.time() < end_time:
-    device.touch(221, 303, 'DOWN_AND_UP')
+    device.touch(228, 306, 'DOWN_AND_UP')
 
-    MonkeyRunner.sleep(WAITTIME * 2)
+    MonkeyRunner.sleep(1)
     
     device.touch(80, 458, 'DOWN_AND_UP')
 

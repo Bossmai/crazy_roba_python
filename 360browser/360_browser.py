@@ -13,7 +13,7 @@ MIN_Y=80
 MAX_Y=400
 
 WAITTIME = 10
-DEBUG = False
+DEBUG = True
 
 print "Wait For connection..."
 if DEBUG == True:

@@ -36,6 +36,14 @@ device.touch(82, 458, 'DOWN_AND_UP')
 
 MonkeyRunner.sleep(WAITTIME)
 
+device.touch(87, 375, 'DOWN_AND_UP')
+
+MonkeyRunner.sleep(WAITTIME)
+
+device.touch(82, 458, 'DOWN_AND_UP')
+
+MonkeyRunner.sleep(WAITTIME)
+
 device.touch(158, 92, 'DOWN_AND_UP')
 
 MonkeyRunner.sleep(WAITTIME)
