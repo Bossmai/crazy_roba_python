@@ -20,7 +20,7 @@ if DEBUG == True:
     device = MonkeyRunner.waitForConnection()
     WAITTIME = 5
 else:
-    WAITTIME = 12
+    WAITTIME = 8
     device = MonkeyRunner.waitForConnection(300, sys.argv[1])
 
 print "Connected."
@@ -42,7 +42,7 @@ if random.randint(0, 1) % 2 == 0:
         device.touch(150, 340, 'DOWN_AND_UP')
         MonkeyRunner.sleep(WAITTIME)
 
-for i in range(0, 50):
+for i in range(0, 25):
     device.drag((300, 240), (60, 240))
     MonkeyRunner.sleep(WAITTIME)
     

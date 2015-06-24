@@ -12,7 +12,7 @@ MAX_X=300
 MIN_Y=80
 MAX_Y=400
 
-WAITTIME = 10
+WAITTIME = 8
 DEBUG = False
 
 print "Wait For connection..."
@@ -20,7 +20,7 @@ if DEBUG == True:
     device = MonkeyRunner.waitForConnection()
     WAITTIME = 5
 else:
-    WAITTIME = 12
+    WAITTIME = 8
     device = MonkeyRunner.waitForConnection(300, sys.argv[1])
 
 print "Connected."
@@ -73,7 +73,7 @@ MonkeyRunner.sleep(WAITTIME  * 2)
 start_time = time.time()
 print "Current time:" + str(start_time)
 
-end_time = start_time + 400
+end_time = start_time + 150
 
 
 while time.time() < end_time:
