@@ -3,8 +3,8 @@ import time
 import random
 import sys
 
-package = 'com.tencent.mtt'
-activity = 'com.tencent.mtt.SplashActivity'
+package = 'com.qihoo.appstore'
+activity = 'com.qihoo.appstore.activities.LauncherActivity'
 runComponent = package + '/' + activity
 
 MIN_X=20
@@ -28,15 +28,27 @@ device.startActivity(component=runComponent)
 
 MonkeyRunner.sleep(WAITTIME * 2)
 
-device.touch(139, 46, 'DOWN_AND_UP')
+device.drag((300, 240), (20, 240))
 
 MonkeyRunner.sleep(WAITTIME)
 
-device.touch(105, 101, 'DOWN_AND_UP')
+device.drag((300, 240), (20, 240))
 
 MonkeyRunner.sleep(WAITTIME)
 
-device.touch(34, 410, 'DOWN_AND_UP')
+device.touch(281, 64, 'DOWN_AND_UP')
+
+MonkeyRunner.sleep(WAITTIME)
+
+device.touch(280, 75, 'DOWN_AND_UP')
+
+MonkeyRunner.sleep(WAITTIME)
+
+device.touch(42, 273, 'DOWN_AND_UP')
+
+MonkeyRunner.sleep(WAITTIME)
+
+device.touch(272, 174, 'DOWN_AND_UP')
 
 MonkeyRunner.sleep(WAITTIME)
 
@@ -53,6 +65,7 @@ while time.time() < end_time:
         y2 = random.randint(MIN_Y, MAX_Y)
         device.drag((x1, y1), (x2, y2))
         print "Monkey drag from (" + str(x1) + ", " + str(y1) + ") to (" + str(x2) + ", " + str(y2) + ")"
+        
     x = random.randint(MIN_X, MAX_X)
     y = random.randint(MIN_Y, MAX_Y)
     device.touch(x, y, 'DOWN')
