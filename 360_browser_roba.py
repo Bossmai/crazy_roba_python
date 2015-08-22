@@ -20,7 +20,7 @@ if DEBUG == True:
     device = MonkeyRunner.waitForConnection()
     WAITTIME = 5
 else:
-    WAITTIME = 8
+    WAITTIME = 7
     device = MonkeyRunner.waitForConnection(300, sys.argv[1])
 
 print "Connected."
