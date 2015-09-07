@@ -3,17 +3,17 @@ import time
 import random
 import sys
 
-package = 'com.zhejiangdaily'
-activity = 'com.zhejiangdaily.StartPageActivity'
+package = 'com.qihoo.gameunion'
+activity = 'com.qihoo.gameunion.activity.guidance.GuidanceActivity'
 runComponent = package + '/' + activity
 
 MIN_X=20
 MAX_X=300
 MIN_Y=80
-MAX_Y=350
+MAX_Y=400
 
-WAITTIME = 10
-DEBUG = True
+WAITTIME = 8
+DEBUG = False
 
 print "Wait For connection..."
 if DEBUG == True:
@@ -28,19 +28,61 @@ device.startActivity(component=runComponent)
 
 MonkeyRunner.sleep(WAITTIME * 2)
 
-for i in range(0,4):
+for i in range(0, 3):
     device.drag((300,240),(20,240))
-    
+    MonkeyRunner.sleep(WAITTIME)         
+
+device.touch(148, 405, 'DOWN_AND_UP')
+
 MonkeyRunner.sleep(WAITTIME)
 
-device.touch(82, 457, 'DOWN_AND_UP')
+device.touch(297, 54, 'DOWN_AND_UP')
+
+MonkeyRunner.sleep(WAITTIME)
+
+device.touch(82, 458, 'DOWN_AND_UP')
+
+MonkeyRunner.sleep(WAITTIME)
+
+device.touch(122, 245, 'DOWN_AND_UP')
+
+MonkeyRunner.sleep(WAITTIME)
+
+device.touch(273, 246, 'DOWN_AND_UP')
+
+MonkeyRunner.sleep(WAITTIME)
+
+device.touch(287, 345, 'DOWN_AND_UP')
+
+MonkeyRunner.sleep(WAITTIME)
+
+
+start_time = time.time()
+print "Current time:" + str(start_time)
+
+end_time = start_time + 150
+
+
+while time.time() < end_time:
+    device.touch(228, 306, 'DOWN_AND_UP')
+
+    MonkeyRunner.sleep(1)
+    
+    device.touch(80, 458, 'DOWN_AND_UP')
+
+    MonkeyRunner.sleep(WAITTIME * 2)
+print "Monkey success."
+
+'''
+
+device.drag((300,240),(20,240))
 
 MonkeyRunner.sleep(WAITTIME)
 
 start_time = time.time()
 print "Current time:" + str(start_time)
 
-end_time = start_time + 120
+end_time = start_time + 300
 
 while time.time() < end_time:
     if random.randint(0, 1) % 2 == 0:
@@ -60,7 +102,4 @@ while time.time() < end_time:
     print "Remain time: " + (str(end_time - time.time()))
     MonkeyRunner.sleep(WAITTIME)
 print "Monkey success."
-
-print "hello"
-
-print "Monkey success."
+'''
