@@ -80,13 +80,14 @@ end_time = start_time + 80
 
 
 while time.time() < end_time:
-     if random.randint(0, 1) % 2 == 0:
+    if random.randint(0, 1) % 2 == 0:
         x1 = random.randint(MIN_X, MAX_X)
         y1 = random.randint(MIN_Y, MAX_Y)
         x2 = random.randint(MIN_X, MAX_X)
         y2 = random.randint(MIN_Y, MAX_Y)
         device.drag((x1, y1), (x2, y2))
         print "Monkey drag from (" + str(x1) + ", " + str(y1) + ") to (" + str(x2) + ", " + str(y2) + ")"
+    
     if random.randint(0, 1) % 2 == 0:
         x = random.randint(MIN_X, MAX_X)
         y = random.randint(MIN_Y, MAX_Y)
