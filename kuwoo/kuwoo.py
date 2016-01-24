@@ -13,7 +13,7 @@ MAX_Y=350
 
 
 
-isDebug = False
+isDebug = True
 
 
 print "Wait For connection..."
